@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Natural Cow Ghee | 500g</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section>
+
+    <header>
+        <h1>Pure Natural Cow Ghee</h1>
+        <p>Traditional goodness in every spoon</p>
+    </header>
+
+    <main class="product">
+
+        <div class="product-image">
+            <div class="ghee-placeholder">
+                <img class="ghee-image"
+                     src="ghee.png"
+                     alt="Health Wheel Cow Ghee">
+            </div>
+        </div>
+
+        <div class="product-info">
+
+            <h2>Natural Cow Ghee</h2>
+
+            <p class="description">
+                Premium natural cow ghee made for your everyday healthy lifestyle.
+            </p>
+
+            <h3>500 g</h3>
+
+            <div class="price">
+                ₹700
+            </div>
+
+            <p class="delivery">
+                🚚 Kerala Delivery Available
+            </p>
+
+            <!-- This button scrolls to the order form -->
+            <button onclick="goToOrder()">
+                Order Now
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <section class="features">
+
+        <div>
+            <h3>🌿 Natural</h3>
+            <p>Made with care and quality.</p>
+        </div>
+
+        <div>
+            <h3>🥄 500 g</h3>
+            <p>Perfect family-size pack.</p>
+        </div>
+
+        <div>
+            <h3>🚚 Kerala Delivery</h3>
+            <p>Delivery available across Kerala.</p>
+        </div>
+
+    </section>
+
+
+    <!-- ORDER FORM -->
+
+    <section class="order-section" id="order">
+
+        <h2 style="font-size: 40px;">Order Natural Cow Ghee</h2>
+
+        <form id="orderForm"><br>
+        <div>
+            <label for="name"style="font-weight: bold;font-size: 20px;">Full Name</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+        </div><br>
+<div>
+            <label for="phone"style="font-weight: bold;font-size: 20px">Phone Number</label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+            >
+</div><br>
+<div>
+            <label for="address"style="font-weight: bold;font-size: 20px">Delivery Address</label>
+
+            <textarea
+                id="address"
+                placeholder="Enter your full address"
+                required
+            ></textarea>
+</div><br>
+<div>
+            <label for="quantity"style="font-weight: bold;font-size: 20px">Quantity</label>
+
+            <select id="quantity">
+
+                <option value="1">1 × 500g</option>
+                <option value="2">2 × 500g</option>
+                <option value="3">3 × 500g</option>
+                <option value="4">4 × 500g</option>
+
+            </select>
+
+</div><br>
+            <button type="submit">
+                Place Order on WhatsApp
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <footer>
+        <p>© 2026 Health Wheel</p>
+    </footer>
+
+
+</section>
+
+
+<script>
+
+    // Product "Order Now" button
+    function goToOrder() {
+
+        document.getElementById("order").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
+
+    // Order form
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+
+        const name = document.getElementById("name").value;
+
+        const phone = document.getElementById("phone").value;
+
+        const address = document.getElementById("address").value;
+
+        const quantity = document.getElementById("quantity").value;
+
+
+        const price = 700;
+
+        const total = quantity * price;
+
+
+        const message =
+            "Hello Health Wheel" +
+
+            "I want to place an order." +
+
+            "Product: Natural Cow Ghee" +
+
+            "Size: 500g" +
+
+            "Quantity: " + quantity + "" +
+
+            "Total: ₹" + total + "" +
+
+            "Customer Name: " + name + "" +
+
+            "Phone: " + phone + "" +
+
+            "Delivery Address: " + address;
+
+
+        // Health Wheel WhatsApp number
+        const whatsappNumber = "9744480644";
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+</script>
+
+</body>
+</html>
+```
