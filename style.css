@@ -4,11 +4,19 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #fffdf5;
     color: #333;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     text-align: center;
@@ -18,8 +26,19 @@ header {
 
 header h1 {
     font-size: 36px;
+    line-height: 1.2;
     margin-bottom: 10px;
 }
+
+header p {
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+
+/* =========================
+   PRODUCT
+========================= */
 
 .product {
     max-width: 1000px;
@@ -37,28 +56,39 @@ header h1 {
 }
 
 .ghee-placeholder {
-    width: 3ch;
-    height: 5cm;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
 
-    margin: auto;
+    margin: 0 auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.ghee-image {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+
+    object-fit: contain;
 }
-    .ghee-image {
-        max-width: 900%;
-        height: auto;
-        object-fit: contain;
-}
-    
+
+
+/* =========================
+   PRODUCT INFORMATION
+========================= */
+
 .product-info {
     flex: 1;
+    text-align: left;
 }
 
 .product-info h2 {
     font-size: 35px;
+    line-height: 1.2;
     margin-bottom: 20px;
 }
 
@@ -66,6 +96,11 @@ header h1 {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.product-info h3 {
+    font-size: 22px;
+    margin: 10px 0;
 }
 
 .price {
@@ -79,11 +114,16 @@ header h1 {
     font-size: 17px;
 }
 
+
+/* =========================
+   BUTTON
+========================= */
+
 button {
     background: #222;
     color: white;
-
     border: none;
+
     padding: 15px 35px;
 
     font-size: 18px;
@@ -95,6 +135,11 @@ button {
 button:hover {
     background: #444;
 }
+
+
+/* =========================
+   FEATURES
+========================= */
 
 .features {
     max-width: 1000px;
@@ -123,6 +168,82 @@ button:hover {
     margin-bottom: 10px;
 }
 
+.features p {
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ORDER SECTION
+========================= */
+
+.order-section {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 30px;
+
+    background: #f5f5f5;
+    border-radius: 15px;
+}
+
+.order-section h2 {
+    text-align: center;
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.order-section label {
+    display: block;
+    margin-top: 15px;
+
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.order-section input,
+.order-section textarea,
+.order-section select {
+    width: 100%;
+
+    padding: 13px;
+    margin-top: 7px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.order-section textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.order-section button {
+    width: 100%;
+
+    padding: 14px;
+    margin-top: 20px;
+
+    background: green;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.order-section button:hover {
+    background: #087a08;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     margin-top: 50px;
     padding: 25px;
@@ -133,63 +254,277 @@ footer {
     color: white;
 }
 
+
+/* =====================================================
+   MOBILE VIEW
+===================================================== */
+
 @media (max-width: 700px) {
 
-    .product {
-        flex-direction: column;
-        text-align: center;
-    }
+    /* HEADER */
 
-    .features {
-        flex-direction: column;
+    header {
+        padding: 35px 15px 30px;
     }
 
     header h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    header p {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+
+    /* PRODUCT - VERTICAL */
+
+    .product {
+        width: 100%;
+        margin: 0 auto;
+
+        padding: 30px 20px 45px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 0;
+
+        text-align: center;
+    }
+
+
+    /* PRODUCT IMAGE */
+
+    .product-image {
+        width: 100%;
+        flex: none;
+
+        margin-bottom: 35px;
+    }
+
+    .ghee-placeholder {
+        width: 100%;
+        max-width: 340px;
+
+        height: auto;
+
+        margin: 0 auto;
+    }
+
+    .ghee-image {
+        display: block;
+
+        width: 100%;
+        max-width: 340px;
+
+        height: auto;
+
+        margin: 0 auto;
+    }
+
+
+    /* PRODUCT TEXT */
+
+    .product-info {
+        width: 100%;
+        flex: none;
+
+        text-align: center;
+    }
+
+
+    /* THIS CREATES THE SPACE
+       BETWEEN IMAGE AND TITLE */
+
+    .product-info h2 {
+        font-size: 32px;
+
+        line-height: 1.2;
+
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+
+    .description {
+        font-size: 17px;
+
+        line-height: 1.55;
+
+        max-width: 360px;
+
+        margin: 0 auto 25px;
+    }
+
+
+    .product-info h3 {
+        font-size: 22px;
+
+        margin: 10px 0 15px;
+    }
+
+
+    .price {
+        font-size: 42px;
+
+        line-height: 1;
+
+        margin: 15px 0 25px;
+    }
+
+
+    .delivery {
+        font-size: 17px;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* ORDER NOW */
+
+    .product-info button {
+        display: block;
+
+        width: 100%;
+        max-width: 300px;
+
+        margin: 0 auto;
+
+        padding: 16px 20px;
+
+        font-size: 18px;
+    }
+
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .features {
+        width: calc(100% - 30px);
+
+        margin: 10px auto 40px;
+
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .features div {
+        width: 100%;
+
+        padding: 22px 15px;
+    }
+
+
+    /* =========================
+       ORDER FORM
+    ========================= */
+
+    .order-section {
+        width: calc(100% - 30px);
+
+        margin: 40px auto;
+
+        padding: 25px 20px;
+
+        border-radius: 15px;
+    }
+
+    .order-section h2 {
+        font-size: 28px;
+
+        line-height: 1.2;
+
+        margin-bottom: 20px;
+    }
+
+    .order-section label {
+        font-size: 17px;
+    }
+
+    .order-section input,
+    .order-section textarea,
+    .order-section select {
+        width: 100%;
+
+        font-size: 16px;
+
+        padding: 13px;
+    }
+
+    .order-section button {
+        width: 100%;
+
+        padding: 15px;
+
+        font-size: 16px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        margin-top: 40px;
+
+        padding: 22px 15px;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+    .product {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .product-image {
+        margin-bottom: 32px;
+    }
+
+    .ghee-placeholder,
+    .ghee-image {
+        max-width: 300px;
+    }
+
+    .product-info h2 {
         font-size: 28px;
     }
 
+    .description {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 38px;
+    }
+
+    .features {
+        width: calc(100% - 20px);
+        padding: 15px;
+    }
+
     .order-section {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 25px;
-    background: #f5f5f5;
-    border-radius: 15px;
-}
-
-.order-section h2 {
-    text-align: center;
-}
-
-.order-section label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-.order-section input,
-.order-section textarea,
-.order-section select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-.order-section textarea {
-    height: 100px;
-}
-
-.order-section button {
-    width: 100%;
-    padding: 14px;
-    margin-top: 20px;
-    background: green;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-}
+        width: calc(100% - 20px);
+        padding: 20px 15px;
+    }
 }
